@@ -1,3 +1,10 @@
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -17,8 +24,9 @@ module.exports = {
       resolve: `gatsby-source-sanity`,
       options: {
         projectId: `meipx397`,
-        dataset: 'production',
-        token: process.env.MY_SANITY_TOKEN
+        dataset: "production",
+        token: process.env.MY_SANITY_TOKEN,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
