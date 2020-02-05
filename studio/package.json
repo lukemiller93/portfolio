@@ -25,5 +25,8 @@
     "react": "^16.2",
     "react-dom": "^16.2"
   },
+  "resolutions": {
+    "@sanity/core/**/mem": "^4.0.0"
+  },
   "devDependencies": {}
 }
